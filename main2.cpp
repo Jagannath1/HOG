@@ -206,11 +206,11 @@ void dfs(Aho &ahotrie, int curVertex, vector<bool> &inH){
         dfs(ahotrie, nextVertex, inH);
     }
 }
-int main()
+int main(int argc, char* argv[])
 {
     vector<string> dictionary ;
     ifstream indata;
-    indata.open("cases/case3.txt");
+    indata.open(argv[1]);
     if(!indata) { // file couldn't be opened
       cerr << "Error: file could not be opened" << endl;
       exit(1);
@@ -237,5 +237,5 @@ int main()
     auto elapsed = std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin);
 
     printf("Time measured: %.6f seconds.\n", elapsed.count() * 1e-9);
-    return 0;
+    return 0;
 }
